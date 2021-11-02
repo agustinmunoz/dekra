@@ -2,7 +2,7 @@ package es.agustin.munoz.dekra.services;
 
 import es.agustin.munoz.dekra.controller.DekraController;
 
-import org.apache.tomcat.util.codec.binary.Base64;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
