@@ -35,7 +35,7 @@ public class CryptService {
 
     private static Logger logger = LoggerFactory.getLogger(CryptService.class);
 
-    public String decrypfromFront(String pass) throws NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException, InvalidKeyException, NoSuchPaddingException {
+   /* public String decrypfromFront(String pass) throws NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException, InvalidKeyException, NoSuchPaddingException {
 
         //String secret = "René Über";
         // String cipherText = "U2FsdGVkX1+tsmZvCEFa/iGeSA0K7gvgs9KXeZKwbCDNCs2zPo+BXjvKYLrJutMK+hxTwl/hyaQLOaD7LLIRo2I5fyeRMPnroo6k8N9uwKk=";
@@ -110,7 +110,7 @@ public class CryptService {
         }
 
 
-    }
+    }*/
 
 
 
