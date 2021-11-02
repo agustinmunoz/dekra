@@ -30,17 +30,19 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("es.agustin.munoz.dekra.controller"))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .apiInfo(apiInfo());
     }
 
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "My REST API",
-                "Some custom description of API.",
-                "API TOS",
+                "Dekra Technical Test",
+                "Rest Api for technical test. Agustín Muñoz",
+                "1.0",
+
                 "Terms of service",
-                new Contact("John Doe", "www.example.com", "myeaddress@company.com"),
+                new Contact("Agustín Muñoz", "www.example.com", "agustin.munoz.afincor@gmail.com"),
                 "License of API", "API license URL", Collections.emptyList());
     }
 }
