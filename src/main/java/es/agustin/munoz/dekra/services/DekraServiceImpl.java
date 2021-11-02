@@ -126,7 +126,7 @@ public class DekraServiceImpl implements DekraService {
 
     }
 
-    /*@Override
+    @Override
     public UserDekra updateUser(UserDekra userDekra) throws Exception {
 
 
@@ -134,7 +134,7 @@ public class DekraServiceImpl implements DekraService {
             Optional<UserDekra> userDekraOptional= userDekraRepository.findById(userDekra.getUsername());
             if(userDekraOptional.isPresent() && userDekraOptional.get()!=null) {
 
-                String encodePass = cryptService.encrypt(userDekra.getPassword());
+                String encodePass = DatatypeConverter.printBase64Binary(userDekra.getPassword().getBytes(StandardCharsets.UTF_8));
                 userDekra.setPassword(encodePass);
                 userDekra.setCreationDate(userDekraOptional.get().getCreationDate());
                 userDekra.setLastLogin(userDekraOptional.get().getLastLogin());
@@ -150,5 +150,5 @@ public class DekraServiceImpl implements DekraService {
         return userDekra;
     }
 
-*/
+
 }

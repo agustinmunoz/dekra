@@ -17,6 +17,6 @@ public interface DekraService {
 
     public void deleteUser(String username) throws Exception ;
 
-/*    public UserDekra updateUser(UserDekra userDekra) throws Exception;*/
+    public UserDekra updateUser(UserDekra userDekra) throws Exception;
 
 }
