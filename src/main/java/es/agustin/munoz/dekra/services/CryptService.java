@@ -1,11 +1,14 @@
 package es.agustin.munoz.dekra.services;
 
 import es.agustin.munoz.dekra.controller.DekraController;
+
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
+
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -16,7 +19,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
 import java.util.Arrays;
-import java.util.Base64;
+
 
 @Service
 public class CryptService {
@@ -35,7 +38,7 @@ public class CryptService {
 
     private static Logger logger = LoggerFactory.getLogger(CryptService.class);
 
-    public String decrypfromFront(String pass) throws NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException, InvalidKeyException, NoSuchPaddingException {
+    /*public String decrypfromFront(String pass) throws NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException, InvalidKeyException, NoSuchPaddingException {
 
         //String secret = "René Über";
         // String cipherText = "U2FsdGVkX1+tsmZvCEFa/iGeSA0K7gvgs9KXeZKwbCDNCs2zPo+BXjvKYLrJutMK+hxTwl/hyaQLOaD7LLIRo2I5fyeRMPnroo6k8N9uwKk=";
@@ -112,7 +115,7 @@ public class CryptService {
 
     }
 
-
+*/
 
     private static Key generateKey() throws Exception {
         Key key = new SecretKeySpec(keyValue, ALGO);
