@@ -3,6 +3,8 @@ package es.agustin.munoz.dekra.services;
 import es.agustin.munoz.dekra.controller.DekraController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
@@ -22,6 +24,8 @@ import java.util.Base64;
 public class CryptService {
 
 
+  /*  @Autowired
+    private PasswordEncoder passwordEncoder;*/
     private static final String ALGO = "AES";
     private static final byte[] keyValue =
             new byte[] { 'a', 'g', 'u', 's', 't', 'i', 'n','j','o','s','e','m','u','n','o','z'};
@@ -114,13 +118,13 @@ public class CryptService {
 
 
 
-    private static Key generateKey() throws Exception {
+    /*private static Key generateKey() throws Exception {
         Key key = new SecretKeySpec(keyValue, ALGO);
         return key;
-    }
+    }*/
 
 
-    public String encrypt(String valueToEnc) throws Exception {
+  /*  public String encrypt(String valueToEnc) throws Exception {
         Key key = generateKeyBBDD();
         Cipher c = Cipher.getInstance(ALGORITHM);
         c.init(Cipher.ENCRYPT_MODE, key);
@@ -143,6 +147,10 @@ public class CryptService {
         Key key = new SecretKeySpec(SECRET.getBytes(), ALGORITHM);
         return key;
     }
+*/
+
+
+
 
 
 }

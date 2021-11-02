@@ -69,13 +69,13 @@ public class DekraController {
     }
 
 
-    @PutMapping("dekra/user")
+/*    @PutMapping("dekra/user")
     public UserDekra updateUser(@Validated @RequestBody UserDekra userDekra) throws Exception {
 
 
         UserDekra response = dekraService.updateUser(userDekra);
         return response;
-    }
+    }*/
 
 
 

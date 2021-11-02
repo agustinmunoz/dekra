@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.xml.bind.DatatypeConverter;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -40,8 +42,11 @@ public class DekraServiceImpl implements DekraService {
 
         if (userDekraOptional.isPresent() && userDekraOptional.get()!=null) {
             userDekra = userDekraOptional.get();
-            String decrypPass = cryptService.decrypt(userDekra.getPassword());
-            if (decrypPass.equals(password)) {
+           // String decrypPass = cryptService.decrypt(userDekra.getPassword());
+            byte[] decrypPass = DatatypeConverter.parseBase64Binary(userDekra.getPassword());
+
+            String decrypPassUTF = new String(decrypPass, "UTF-8");
+            if (decrypPassUTF.equals(password)) {
               //  userDekra.setPassword(null);
                 userDekra.setCreationDate(userDekraOptional.get().getCreationDate());
                 userDekra.setLastLogin(LocalDateTime.now());
@@ -83,7 +88,10 @@ public class DekraServiceImpl implements DekraService {
     @Override
     public UserDekra addUser(UserDekra userDekra) throws Exception {
         try {
-            String encodePass = cryptService.encrypt(userDekra.getPassword());
+           // String encodePass = cryptService.encrypt(userDekra.getPassword());
+
+            String encodePass = DatatypeConverter.printBase64Binary(userDekra.getPassword().getBytes(StandardCharsets.UTF_8));
+
             userDekra.setPassword(encodePass);
             userDekra.setCreationDate(LocalDateTime.now());
             userDekra.setLastLogin(LocalDateTime.now());
@@ -118,7 +126,7 @@ public class DekraServiceImpl implements DekraService {
 
     }
 
-    @Override
+    /*@Override
     public UserDekra updateUser(UserDekra userDekra) throws Exception {
 
 
@@ -142,5 +150,5 @@ public class DekraServiceImpl implements DekraService {
         return userDekra;
     }
 
-
+*/
 }
