@@ -1,13 +1,11 @@
 package es.agustin.munoz.dekra.services;
 
 import es.agustin.munoz.dekra.controller.DekraController;
-
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
 
 import javax.crypto.BadPaddingException;
@@ -25,6 +23,8 @@ import java.util.Arrays;
 public class CryptService {
 
 
+  /*  @Autowired
+    private PasswordEncoder passwordEncoder;*/
     private static final String ALGO = "AES";
     private static final byte[] keyValue =
             new byte[] { 'a', 'g', 'u', 's', 't', 'i', 'n','j','o','s','e','m','u','n','o','z'};
@@ -38,7 +38,7 @@ public class CryptService {
 
     private static Logger logger = LoggerFactory.getLogger(CryptService.class);
 
-    /*public String decrypfromFront(String pass) throws NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException, InvalidKeyException, NoSuchPaddingException {
+   /* public String decrypfromFront(String pass) throws NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException, InvalidKeyException, NoSuchPaddingException {
 
         //String secret = "René Über";
         // String cipherText = "U2FsdGVkX1+tsmZvCEFa/iGeSA0K7gvgs9KXeZKwbCDNCs2zPo+BXjvKYLrJutMK+hxTwl/hyaQLOaD7LLIRo2I5fyeRMPnroo6k8N9uwKk=";
@@ -113,17 +113,17 @@ public class CryptService {
         }
 
 
-    }
+    }*/
 
-*/
 
-    private static Key generateKey() throws Exception {
+
+    /*private static Key generateKey() throws Exception {
         Key key = new SecretKeySpec(keyValue, ALGO);
         return key;
-    }
+    }*/
 
 
-    public String encrypt(String valueToEnc) throws Exception {
+  /*  public String encrypt(String valueToEnc) throws Exception {
         Key key = generateKeyBBDD();
         Cipher c = Cipher.getInstance(ALGORITHM);
         c.init(Cipher.ENCRYPT_MODE, key);
@@ -146,6 +146,10 @@ public class CryptService {
         Key key = new SecretKeySpec(SECRET.getBytes(), ALGORITHM);
         return key;
     }
+*/
+
+
+
 
 
 }

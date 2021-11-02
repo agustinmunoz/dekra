@@ -10,6 +10,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+@CrossOrigin()
 @RestController
 @Api(description = "Dekra Api Rest Controller Technical Text")
 public class DekraController {
