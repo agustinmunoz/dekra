@@ -36,14 +36,15 @@ public class DekraController {
         return userList;
     }
 
-    @ApiOperation(value = "Places a new transaction on the system.", notes = "Creates a new transaction in the system. See the schema of the Transaction parameter for more information ")
+    @ApiOperation(value = "Get User By Id And Pass")
     @GetMapping("/dekra/user")
     public UserDekra getUserById(
 
             @ApiParam(
-                    value = "A JSON value representing a transaction. An example of the expected schema can be found down here. The fields marked with an * means that they are required." ,
-                    example = "{foo: whatever, bar: whatever2}")
+                    value = "Username String")
             @RequestParam("username") String username,
+            @ApiParam(
+                    value = "Password String")
             @RequestParam("password") String password
 
     ) throws Exception {
