@@ -7,7 +7,7 @@ pipeline {
                 stage('preamble') {
                     steps {
                                 
-  sh 'su -i'
+ sh 'chown root:jenkins /usr/share/maven'
 
 sh' mkdir -p /usr/share/maven /usr/share/maven/ref \
   && echo "Downlaoding maven" \
