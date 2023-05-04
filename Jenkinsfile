@@ -7,7 +7,7 @@ pipeline {
                 stage('preamble') {
                     steps {
                                 
-  sh 'sudo -i'
+  sh 'su -i'
 
 sh' mkdir -p /usr/share/maven /usr/share/maven/ref \
   && echo "Downlaoding maven" \
