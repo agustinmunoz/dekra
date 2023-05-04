@@ -8,7 +8,7 @@ pipeline {
                         
                         stage('clonando repositorio') {
                                     agent {
-                docker { image 'maven:3.9.0-eclipse-temurin-11' }
+                docker-default { image 'maven:3.9.0-eclipse-temurin-11' }
             }
                                     
                                     
