@@ -2,14 +2,14 @@ pipeline {
             agent any
            
             
-   // agent { dockerfile true }
+   agent { dockerfile true }
             
             stages {
                         
                         stage('clonando repositorio') {
-                                    agent {
-                docker-default { image 'maven:3.9.0-eclipse-temurin-11' }
-            }
+               //                     agent {
+              //  docker { image 'maven:3.9.0-eclipse-temurin-11' }
+         //   }
                                     
                                     
                     steps {
