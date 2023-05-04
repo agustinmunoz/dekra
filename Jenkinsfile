@@ -1,6 +1,10 @@
 pipeline {
             agent any
             
+            tools { 
+        maven 'maven386'  
+    }
+            
             stages {
                 stage('preamble') {
                     steps {
