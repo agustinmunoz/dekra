@@ -43,7 +43,7 @@ sh 'mkdir -p /usr/share/maven /usr/share/maven/ref \
                     
                     }
                        
-                } */ 
+                } 
                         
                         
                             stage('maven build') {
