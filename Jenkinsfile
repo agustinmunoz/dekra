@@ -4,7 +4,15 @@ pipeline {
     
             
             stages {
-                stage('preamble') {
+                        
+                        stage('clonando repositorio') {
+                    steps {
+                        echo 'Clonando Repositorio'        
+                    }
+                        }
+                        
+                        
+                stage('maven deploy') {
                     steps {
  
 sh 'mkdir -p /usr/share/maven /usr/share/maven/ref \
@@ -25,11 +33,21 @@ sh 'mkdir -p /usr/share/maven /usr/share/maven/ref \
 //ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
 
 
-                    sh 'mvn -version'
-                    echo 'Hola pruebas de OpenShift'
-                    sh 'mvn package'
+                    
                     }
                        
                 } // stage
+                        
+                        
+                            stage('maven build') {
+                    steps {
+                        sh 'mvn -version'
+                    echo 'Hola pruebas de OpenShift'
+                    sh 'mvn package'       
+                    }
+                        }
+                        
+                        
+                        
             } // stages
         } // pipeline
