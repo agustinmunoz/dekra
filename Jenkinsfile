@@ -8,6 +8,7 @@ pipeline {
             stages {
                 stage('preamble') {
                     steps {
+                    sh 'mvn -version'
                     echo 'Hola pruebas de OpenShift'
                     }
                        
