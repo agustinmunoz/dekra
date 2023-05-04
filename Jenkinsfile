@@ -27,6 +27,7 @@ sh 'mkdir -p /usr/share/maven /usr/share/maven/ref \
 
                     sh 'mvn -version'
                     echo 'Hola pruebas de OpenShift'
+                    sh 'mvn package'
                     }
                        
                 } // stage
