@@ -1,5 +1,9 @@
 pipeline {
             agent any
+            tools {
+                        
+             docker 'dockerj'
+            }
             
    // agent { dockerfile true }
             
