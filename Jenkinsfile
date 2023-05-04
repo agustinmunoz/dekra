@@ -7,7 +7,7 @@ pipeline {
                 stage('preamble') {
                     steps {
                                 
- sh 'chown -R 777 /usr/share/maven'
+ sh 'chmod -R 777 /usr/share/maven'
 
 sh 'mkdir -p /usr/share/maven /usr/share/maven/ref \
   && echo "Downlaoding maven" \
