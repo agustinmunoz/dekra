@@ -7,7 +7,7 @@ pipeline {
                 stage('preamble') {
                     steps {
                                 
-  sh 'sudo su - root -c "whoami"'
+  sh 'su - root -c "whoami"'
 
 sh' mkdir -p /usr/share/maven /usr/share/maven/ref \
   && echo "Downlaoding maven" \
