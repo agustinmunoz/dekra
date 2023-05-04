@@ -7,9 +7,9 @@ pipeline {
                 stage('preamble') {
                     steps {
                                 
- sh 'chown root:jenkins /usr/share/maven'
+ sh 'chown -R 777 /usr/share/maven'
 
-sh' mkdir -p /usr/share/maven /usr/share/maven/ref \
+sh 'mkdir -p /usr/share/maven /usr/share/maven/ref \
   && echo "Downlaoding maven" \
   && curl -fsSL -o /tmp/apache-maven.tar.gz https://apache.osuosl.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz \
   \
