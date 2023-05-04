@@ -1,15 +1,17 @@
 pipeline {
             agent any
-            tools {
-                        
-             docker 'dockerj'
-            }
+           
             
    // agent { dockerfile true }
             
             stages {
                         
                         stage('clonando repositorio') {
+                                    agent {
+                docker { image 'maven:3.9.0-eclipse-temurin-11' }
+            }
+                                    
+                                    
                     steps {
                         echo 'Clonando Repositorio' 
                         sh 'docker container ls'
