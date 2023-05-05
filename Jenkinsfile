@@ -2,7 +2,7 @@ pipeline {
       //      agent any
            
             
-   agent { docker }
+   agent  docker
             
             stages {
                         
