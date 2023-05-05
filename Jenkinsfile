@@ -1,8 +1,8 @@
 pipeline {
-            agent any
+      //      agent any
            
             
- //  agent { dockerfile true }
+   agent { docker-jenkins true }
             
             stages {
                         
