@@ -2,7 +2,7 @@ pipeline {
       //      agent any
            
             
-   agent { docker-jenkins }
+   agent { label: docker-jenkins }
             
             stages {
                         
