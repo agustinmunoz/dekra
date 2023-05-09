@@ -35,8 +35,7 @@ pipeline {
     }
                                     
                     steps {
-                                
-                                agent docker { docker --version }
+          
                                 
                         echo 'Clonando Repositorio' 
                        // docker --version
