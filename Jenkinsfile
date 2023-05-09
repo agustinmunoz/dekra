@@ -10,11 +10,7 @@ pipeline {
     // https://github.com/jenkinsci/docker-commons-plugin/pull/52
     'org.jenkinsci.plugins.docker.commons.tools.DockerTool' '18.09'
   }
-       //   tools {
-       // docker "docker_j"
-
-   // } 
-            
+       
         
             
             
@@ -30,12 +26,12 @@ pipeline {
             stages {
 
                         stage('clonando repositorio') {
-                        agent { 
+      
         docker {    // Pick up the DockerFile in root repo. And excute every command inside the container
            docker --version
                   //args '-u root:sudo'  // Run docker run commands with these args
         } 
-      }           
+            
                                     
                     steps {
                         echo 'Clonando Repositorio' 
