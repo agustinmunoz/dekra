@@ -32,14 +32,9 @@ pipeline {
       
             
             stages {
-                       docker run -p 8080:8080 -v 
-/var/run/docker.sock:/var/run/docker.sock liatrio/jenkins-alpine 
+
                         stage('clonando repositorio') {
-                                    agent {
-                docker { image 'maven:3.9.0-eclipse-temurin-11' }
-            }
-                        }
-                                    
+                                  
                                     
                     steps {
                         echo 'Clonando Repositorio' 
