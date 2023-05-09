@@ -1,9 +1,21 @@
 pipeline {
-            agent any
-          tools {
-        docker "docker_j"
+      //      agent any
+       //   tools {
+       // docker "docker_j"
 
-    }  
+   // } 
+            
+            agent {
+        docker {
+            image 'maven:3.9.0-eclipse-temurin-11'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+            }
+            
+            
+            
+            
+            
             
   // agent  docker
       
