@@ -17,7 +17,7 @@ pipeline {
             
             
             
-  // agent  docker
+         //   agent  docker { docker --version }
       
      
       
@@ -27,10 +27,7 @@ pipeline {
 
                         stage('clonando repositorio') {
       
-        docker {    // Pick up the DockerFile in root repo. And excute every command inside the container
-           docker --version
-                  //args '-u root:sudo'  // Run docker run commands with these args
-        } 
+       
             
                                     
                     steps {
