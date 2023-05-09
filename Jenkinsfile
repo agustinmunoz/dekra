@@ -27,9 +27,11 @@ pipeline {
 
                         stage('clonando repositorio') {
       
-       
-            agent {
-        docker { docker --version }
+  agent {
+        docker {
+            image "bash:latest"
+            args '--network agu-network'
+        }
     }
                                     
                     steps {
