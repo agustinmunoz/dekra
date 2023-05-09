@@ -1,6 +1,9 @@
 pipeline {
             agent any
-           
+          tools {
+        docker "docker_j"
+
+    }  
             
   // agent  docker
       
