@@ -28,7 +28,9 @@ pipeline {
                         stage('clonando repositorio') {
       
        
-            
+            agent {
+        docker { docker --version }
+    }
                                     
                     steps {
                                 
