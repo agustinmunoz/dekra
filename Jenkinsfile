@@ -38,7 +38,7 @@ pipeline {
                                     
                     steps {
                         echo 'Clonando Repositorio' 
-                        sh 'docker --version'
+                        docker --version
                     }
                         }
                         
