@@ -39,11 +39,7 @@ pipeline {
                         
                         
               
-                        
-                            stage('maven build') {
-                    
-                        }
-                        
+                     
                         
                         
             } // stages
