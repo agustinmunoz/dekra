@@ -36,6 +36,9 @@ pipeline {
                        sh 'docker --version'
                         echo 'maven build'        
                                 sh 'mvn clean package'
+                                
+                      sh  docker build -t dekra .
+                      docker container run -p 8765:8765 --name dekra --network agu-network  dekra
                     }
                         }
                         
